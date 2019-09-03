@@ -1,0 +1,36 @@
+##########################
+###       generic      ###
+##########################
+
+## It's important to keep '**/' at the beginning of generic paths, otherwise .dockerignore fails
+**/.idea
+**/.DS_Store
+**/.atom
+**/.vscode
+**/Thumbs.db
+
+# python
+**/__pycache__
+**/*.pyc
+**/*.pytest_cache
+**/*.*___jb_tmp___
+
+# node
+**/node_modules
+**/.env.*
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+
+# android
+**/*.iml
+**/.gradle
+**/local.properties
+**/*.apk
+**/*.ap_
+**/*.dex
+
+# java
+**/*.class
+**/.classpath
+**/.project
