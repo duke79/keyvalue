@@ -5,6 +5,7 @@ export const keyvalue_url = "http://localhost:5555";
 
 class Store {
     pairs = observable.map({});
+    user = observable.box(null)
 
     set_key = action("set_key", function (key, value) {
         const url = `${keyvalue_url}/set?key=${key}&value=${value}`;
