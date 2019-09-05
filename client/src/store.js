@@ -8,7 +8,7 @@ class Store {
     user = observable.box(null)
 
     set_key = action("set_key", function (key, value) {
-        const url = `${keyvalue_url}/set?key=${key}&value=${value}`;
+        const url = `${keyvalue_url}/set?key=${key}&value=${value}&user=${store.user.get()}`;
         axios
             .get(url)
             .then(res => {
@@ -20,7 +20,7 @@ class Store {
     });
 
     get_key = action("get_key", function (key) {
-        const url = `${keyvalue_url}/get?key=${key}`;
+        const url = `${keyvalue_url}/get?key=${key}&user=${store.user.get()}`;
         axios
             .get(url)
             .then(res => {

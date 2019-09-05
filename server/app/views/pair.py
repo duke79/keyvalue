@@ -7,7 +7,10 @@ from flask import request
 def get():
     if request.method == 'GET':
         key = request.args.get("key")
-        value = store.get(key)
+        user_name = request.args.get("user")
+
+        user_id = store.get_user_id(user_name)
+        value = store.get(key, user_id)
 
         if value is None:
             return "", 204
@@ -20,7 +23,9 @@ def set():
     if request.method == 'GET':
         key = request.args.get("key")
         value = request.args.get("value")
+        user_name = request.args.get("user")
 
-        store.set(key, value)
+        user_id = store.get_user_id(user_name)
+        store.set(key, value, user_id)
 
         return value

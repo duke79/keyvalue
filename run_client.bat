@@ -1,5 +1,5 @@
 @echo off
 
 cd client
-pip install
+npm install
 npm start

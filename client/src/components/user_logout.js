@@ -28,6 +28,7 @@ class UserLogout extends React.Component {
 
     on_submit(e) {
         store.user.set(null);
+        store.pairs.clear();
     }
 
     render() {
